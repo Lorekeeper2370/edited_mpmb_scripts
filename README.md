@@ -1,2 +1,2 @@
 # mpmb-sheet-scripts
-This is just a small repository for me to add some scripts for MPMB's Character Record Sheet
+All of these scripts are edited versions of existing scripts, the most I can say is that it imports into the sheet without any errors.
