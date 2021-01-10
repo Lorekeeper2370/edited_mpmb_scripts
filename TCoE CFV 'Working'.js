@@ -1190,7 +1190,7 @@ AddFeatureChoice(ClassList.warlock.features["eldritch invocations"], true, "Prot
 });
 AddFeatureChoice(ClassList.warlock.features["eldritch invocations"], true, "Rebuke of the Talisman (prereq: Pact of the Talisman)", {
 	name : "Rebuke of the Talisman",
-	source : ["UA:CFV", 12],
+	source : ["TCoE", 71],
 	description : desc([
 		"As a reaction when the wearer of my talisman is hit, I deal damage and push the attacker",
 		"To be able to do this, I have to see the attacker and it has to be within 30 ft of me",
@@ -1204,7 +1204,7 @@ AddFeatureChoice(ClassList.warlock.features["eldritch invocations"], true, "Rebu
 // Pact Boon option
 AddFeatureChoice(ClassList.warlock.features["pact boon"], false, "Pact of the Talisman", {
 	name : "Pact of the Talisman",
-	source : ["UA:CFV", 12],
+	source : ["TCoE", 70],
 	description : desc([
 		"The wearer of this amulet adds 1d4 to failed ability checks, potentially turning a failed roll into a success; I can do this a number of times euqal to my proficiency bonus and all expended uses are regained on a long rest",
 		"I can give the talisman to others to use; The talisman turns to ash when I die",
@@ -1217,9 +1217,10 @@ AddFeatureChoice(ClassList.warlock.features["pact boon"], false, "Pact of the Ta
 });
 
 // Wizard alternative class features and enhancements
-AddFeatureChoice(ClassList.wizard.features.spellcasting, true, "Cantrip Versatility", {
+AddFeatureChoice(ClassList.wizard.features.spellcasting, true, "Cantrip Formulas", {
 	name : "Cantrip Formulas",
-	source : ["UA:CFV", 12],
+	source : ["TCoE", 76],
+	minlevel : 3,
 	description : "\n	I have sciped a set of arcane formulas in my spellbook that I can use to formulate a cantrip in my mind. Whenever I finish a long rest and consult those formulas in my spellbook, I can replace on wizard cantrip I know with another cantrip from the wizard spell list"
 }, "Wizard Spellcasting Enhancement");
 AddFeatureChoice(ClassList.wizard.features.spellcasting, true, "Expanded Spell List", {
