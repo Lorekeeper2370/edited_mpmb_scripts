@@ -10765,11 +10765,11 @@ AddSubClass("wizard", "bladesinging", {
 	subname : "Tradition of Bladesinging",
 	fullname : "Bladesinger",
 	attacks : [1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-	source : ["S", 142],
+	source : ["TCoE", 76],
 	features : {
 		"subclassfeature2" : {
 			name : "Training in War and Song",
-			source : ["S", 142],
+			source : ["TCoE", 76],
 			minlevel : 2,
 			description : "\n   " + "I gain proficiency with light armor, a one-handed melee weapon, and Performance",
 			armorProfs : [true, false, false, false],
@@ -10777,7 +10777,7 @@ AddSubClass("wizard", "bladesinging", {
 		},
 		"subclassfeature2.1" : {
 			name : "Bladesong",
-			source : ["S", 142],
+			source : ["TCoE", 76],
 			minlevel : 2,
 			description : desc([
 				"As a bonus action, I can start the bladesong for 1 minute; I can dismiss it at any time",
@@ -10794,7 +10794,7 @@ AddSubClass("wizard", "bladesinging", {
 		},
 		"subclassfeature10" : {
 			name : "Song of Defense",
-			source : ["S", 142],
+			source : ["TCoE", 77],
 			minlevel : 10,
 			description : "\n   " + "As a reaction while my bladesong is active, I can expend a spell slot to reduce damage" + "\n   " + "The damage I take is reduced by 5 for every level of the spell slot I expend",
 			action : ["reaction", " (in bladesong)"]
@@ -10802,7 +10802,7 @@ AddSubClass("wizard", "bladesinging", {
 		},
 		"subclassfeature14" : {
 			name : "Song of Victory",
-			source : ["S", 142],
+			source : ["TCoE", 77],
 			minlevel : 14,
 			description : "\n   " + "While my bladesong is active, I can add my Int mod to melee weapon attack damage",
 			calcChanges : {
