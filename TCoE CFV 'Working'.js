@@ -7,7 +7,7 @@ SourceList["TCoE"] = {
 	name : "Tasha's Cauldron of Everything",
 	abbreviation : "TCoE",
 	group : "Primary Sources",
-	url : "https://thetrove.is/Books/Dungeons%20&%20Dragons%20[multi]/5th%20Edition%20(5e)/Core/Tasha%E2%80%99s%20Cauldron%20of%20Everything%20%28HQ%2C%20Both%20Covers%29.pdf",
+	url : "https://dnd.wizards.com/products/tabletop-games/rpg-products/tashas-cauldron-everything",
 	date : "2020/11/17"
 };
 
@@ -19,7 +19,7 @@ AddFeatureChoice(ClassList.barbarian.features, true, "Survival Instincts", {
 	source : ["TCoE", 24],
 	minlevel : 1,
 	description : desc([
-		"Once at 3rd level and again at 10th leven, I gain proficiency in one option available to Barbarians at level 1",
+		"Once at 3rd level and again at 10th level, I gain proficiency in one option available to Barbarians at level 1",
 		"I can choose from Animal Handling, Medicine, Nature, Perception, and Survival"
 	]),
 	skillstxt : "Proficiency one from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival"
@@ -62,7 +62,7 @@ AddFeatureChoice(ClassList.bard.features.spellcasting, true, "Spell Versatility"
 	name : "Bardic Versatility",
 	source : ["TCoE", 28],
 	description : "\n   Whenever I reach a level in this class that grants the Ability Score Improvement, I can do one of the following, representing a change in focus as you use your skills and magic",
-	"Replace on of the skills I chose for the Expertise feature with one of my other skill proficiencies that isn't benefiting from Expertise":
+	"Replace one of the skills I chose for the Expertise feature with one of my other skill proficiencies that isn't benefiting from Expertise":
 	"Replace one cantrip you learned I learned from this class's Spellcasting feature with another cantrip from the bard spell list",
 }, "Bard Spellcasting Enhancement");
 
@@ -126,7 +126,7 @@ RunFunctionAtEnd(function() {
 AddFeatureChoice(ClassList.druid.features.spellcasting, true, "Cantrip Versatility", {
 	name : "Cantrip Versatility",
 	source : ["TCoE", 36],
-	description : "\n   Whenever I gain an Ability Score Improvment in this class, I can replace a druid cantrip I know with another"
+	description : "\n   Whenever I gain an Ability Score Improvement in this class, I can replace a druid cantrip I know with another"
 }, "Druid Spellcasting Enhancement");
 AddFeatureChoice(ClassList.druid.features.spellcasting, true, "Expanded Spell List", {
 	name : "Additional Druid Spells",
@@ -177,7 +177,8 @@ if (ClassSubList["druid-circle of the moon"]) {
 // The enhancement option for fighting styles has to be added to each class separately
 AddFeatureChoice(ClassList.fighter.features["fighting style"], true, "Martial Versatility", {
 	name : "Martial Versatility",
-	source : ["UA:CFV", 12],
+	source : ["TCoE", 42],
+	minlevel : 4,
 	description : "\n   Whenever I gain an Ability Score Improvement from fighter levels, I can swap a fighting style I know for another I'm allowed, or I can replace one maneuver with another I know I'm allowed"
 }, "Fighting Style Enhancement");
 // All the other fighting styles are available for all three classes, fighter, paladin, and ranger, so add them to all three here
@@ -317,7 +318,7 @@ CreateClassFeatureVariant("monk", "martial arts", "Choose Monk Weapons", {
 	minlevel : 2 ,
 	description : desc([
 		"Whenever I finish a short or long rest, I can touch one weapon and focus my ki on it to make it count as a monk weapon until I use this feature again",
-		"The chosen weapon must meat these criteria: The weapon must be a simple or martial weapon; I must be proficient with it; It must lack the heavery and special properties",
+		"The chosen weapon must meet these criteria: The weapon must be a simple or martial weapon; I must be proficient with it; It must lack the heavery and special properties",
 	]),
 	eval : function() {
 		ClassList.monk.features["martial arts"].extrachoicesNotInMenu = false;
@@ -422,7 +423,7 @@ AddFeatureChoice(ClassList.paladin.features["fighting style"], true, "Martial Ve
 	name : "Martial Versatility",
 	source : ["TCoE", 53],
 	minlevel : 4 ,
-	description : "\n   Whenever I gain an Ability Score Improvment from paladin levels, I can swap a fighting style I know for another I'm allowed"
+	description : "\n   Whenever I gain an Ability Score Improvement from paladin levels, I can swap a fighting style I know for another I'm allowed"
 }, "Fighting Style Enhancement");
 AddFeatureChoice(ClassList.paladin.features.spellcasting, true, "Expanded Spell List", {
 	name : "Expanded Paladin Spell List",
@@ -443,7 +444,7 @@ AddFeatureChoice(ClassList.paladin.features["subclassfeature3.0-channel divinity
 	name : "Channel Divinity: Harness Divine Power",
 	source : ["TCoE", 53],
 	minlevel : 3 ,
-	description : "\n   As a bonus action, I can use my holy symbol and a prayer to regain 1 spell slot. The spell slot recovered can be no higher than half of my profiency bonus (round up)",
+	description : "\n   As a bonus action, I can use my holy symbol and a prayer to regain 1 spell slot. The spell slot recovered can be no higher than half of my proficiency bonus (round up)",
 	action : [["bonus action", ""]]
 }, "Channel Divinity Enhancement");
 
@@ -479,7 +480,7 @@ AddFeatureChoice(origNatExpl, false, "Deft Explorer", {
 	name : "Deft Explorer",
 	source : ["TCoE", 56],
 	minlevel : 1 ,
-	description : "I am an unsurpassed explorer and survivor, both in the wilderness and in dealing with others on my travels. I gain the Canny benefit, and I gain additional benifits at 6th and 10th levels in this class",
+	description : "I am an unsurpassed explorer and survivor, both in the wilderness and in dealing with others on my travels. I gain the Canny benefit, and I gain additional benefits at 6th and 10th levels in this class",
 	features : {
 	
 	"deft explorer: canny" : {
@@ -636,9 +637,9 @@ CreateClassFeatureVariant("ranger", "hide in plain sight", "Nature's Veil", {
 			recovery : "long rest",
 });
 if (ClassSubList["ranger-beast master"]) {
-	AddFeatureChoice(ClassSubList["ranger-beast master"].features["subclassfeature3"], true, "Beast of the Air/Earth", {
-		name : "Beast of the Air/Earth",
-		source : ["UA:CFV", 8],
+	AddFeatureChoice(ClassSubList["ranger-beast master"].features["subclassfeature3"], true, "Primal Companion", {
+		name : "Primal Companion",
+		source : ["TCoE", 61],
 		description : desc([
 			"My ranger's companion can be a primal beast whose lineage stretches back to the beginning",
 			"This beast of the air or earth takes the form of a regular animal, but has different abilities",
@@ -652,7 +653,7 @@ if (ClassSubList["ranger-beast master"]) {
 }
 CreatureList["beast of the air"] = {
 	name : "Beast of the Air",
-	source : ["UA:CFV", 8],
+	source : ["TCoE", 61],
 	size : 4,
 	type : "Beast",
 	subtype : "",
@@ -702,7 +703,7 @@ CreatureList["beast of the air"] = {
 }
 CreatureList["beast of the earth"] = {
 	name : "Beast of the Earth",
-	source : ["UA:CFV", 9],
+	source : ["TCoE", 61],
 	size : 3,
 	type : "Beast",
 	subtype : "",
@@ -1015,7 +1016,7 @@ AddFeatureChoice(ClassList.sorcerer.features.spellcasting, true, "Expanded Spell
 			function(spList, spName, spType) {
 				// Stop this is not the class' spell list or if this is for a bonus spell entry
 				if (spName !== "sorcerer" || spType.indexOf("bonus") !== -1) return;
-				spList.extraspells = spList.extraspells.concat(["booming blade", "green-flame blade", "lightning lure", "mind sliver", "sword burst", "grease", "tasha's caustic brew", "flame blade", "flaming sphere", "magic weapon", "tasha's mind whip", "intellect fortress", "vampiric touch", "fire shield", "flesh to stone", "otiluke's freezing sphere", "tasha's otherworldy guise", "dream of the blue veil", "demiplane", "blade of disaster"]);
+				spList.extraspells = spList.extraspells.concat(["booming blade", "green-flame blade", "lightning lure", "mind sliver", "sword burst", "grease", "tasha's caustic brew", "flame blade", "flaming sphere", "magic weapon", "tasha's mind whip", "intellect fortress", "vampiric touch", "fire shield", "flesh to stone", "otiluke's freezing sphere", "tasha's otherworldly guise", "dream of the blue veil", "demiplane", "blade of disaster"]);
 			},
 			"This alternative class feature enhancement expands the spells list of the sorcerer class."
 		]
@@ -1057,7 +1058,7 @@ AddFeatureChoice(ClassList.warlock.features["pact magic"], true, "Spell Versatil
 	name : "Eldritch Versatility",
 	source : ["TCoE", 70],
 	minlevel : 4,
-	description : "\n   Whenever I gain an Ability Score Improvment from Warlock levels; I can exchange a Warlock cantrip for another available to me, I can replace my Pact Boon for another available option; or, if I am 12th level or higher, I can replace one mystic arcanum spell with another spell of the same level from the warlock list"
+	description : "\n   Whenever I gain an Ability Score Improvement from Warlock levels; I can exchange a Warlock cantrip for another available to me, I can replace my Pact Boon for another available option; or, if I am 12th level or higher, I can replace one mystic arcanum spell with another spell of the same level from the warlock list"
 }, "Pact Magic Enhancement");
 AddFeatureChoice(ClassList.warlock.features["pact magic"], true, "Expanded Spell List", {
 	name : "Expanded Warlock Spell List",
@@ -1068,7 +1069,7 @@ AddFeatureChoice(ClassList.warlock.features["pact magic"], true, "Expanded Spell
 			function(spList, spName, spType) {
 				// Stop this is not the class' spell list or if this is for a bonus spell entry
 				if (spName !== "warlock" || (spType.indexOf("bonus") !== -1 && (!spList["class"] || spList["class"] !== "warlock"))) return;
-				spList.extraspells = spList.extraspells.concat(["booming blade", "green-flame blade", "lightning lure", "mind sliver", "sword burst", "intellect fortress", "spirit shroud", "summon fey", "summon shadowspawn", "summon undead", "summon aberration", "mislead", "planar binding", "teleportation circle", "summon fiend", "tasha's otherworldy guise", "dream of the blue veil", "blade of disaster", "gate", "weird"]);
+				spList.extraspells = spList.extraspells.concat(["booming blade", "green-flame blade", "lightning lure", "mind sliver", "sword burst", "intellect fortress", "spirit shroud", "summon fey", "summon shadowspawn", "summon undead", "summon aberration", "mislead", "planar binding", "teleportation circle", "summon fiend", "tasha's otherworldly guise", "dream of the blue veil", "blade of disaster", "gate", "weird"]);
 			},
 			"This alternative class feature enhancement expands the spells list of the warlock class."
 		]
@@ -1123,7 +1124,7 @@ AddFeatureChoice(ClassList.warlock.features["eldritch invocations"], true, "Far 
 		"sending" : {
 			components : "V,S",
 			compMaterial : "",
-			description : "Send 25 word message to crea named in book of shadows; it recognizes me and can respond 25 words",
+			description : "Send 25 word message to creature named in book of shadows; it recognizes me and can respond 25 words",
 			changes : "By using Far Scribe, I can cast Sending without using a spell slot or material components, but only to target one of the creatures that wrote their name in my book of shadows. Instead of speaking the message, I write it in my book and any response appears there as well, lasting for 1 minute. The target still hears the message in their mind."
 		}
 	}
@@ -1153,7 +1154,7 @@ AddFeatureChoice(ClassList.warlock.features["eldritch invocations"], true, "Inve
 		"\u2022 AS a bonus action, I can command the familiar to take the Attack action",
 		"\u2022 Its weapon attacks are considered magical for overcoming immunities and resistances",
 		"\u2022 If it forces a creature to make a saving throw, it uses my spell save DC",
-		"\u2022 Whenthe familiar takes damage, I can use my reaction to grant it resistance against that damage",
+		"\u2022 When the familiar takes damage, I can use my reaction to grant it resistance against that damage",
 		"Note that the automation will only add this to current familiars and on a level change"
 	]),
 	prereqeval : function(v) {
@@ -1179,7 +1180,7 @@ AddFeatureChoice(ClassList.warlock.features["eldritch invocations"], true, "Inve
 AddFeatureChoice(ClassList.warlock.features["eldritch invocations"], true, "Protection of the Talisman (prereq: level 7 warlock, Pact of the Talisman)", {
 	name : "Protection of the Talisman",
 	source : ["TCoE", 71],
-	description : "\n   The wearer of my talisman adds 1d4 to saving throw rolls in which they lack proficiency. This can be used a number of times equal to my profiency bonus, and all expended uses are restored when I finish a long rest",
+	description : "\n   The wearer of my talisman adds 1d4 to saving throw rolls in which they lack proficiency. This can be used a number of times equal to my proficiency bonus, and all expended uses are restored when I finish a long rest",
 	prereqeval : function(v) {
 		return classes.known.warlock.level >= 9 && GetFeatureChoice('class', 'warlock', 'pact boon') == 'pact of the talisman';
 	},
@@ -1206,9 +1207,9 @@ AddFeatureChoice(ClassList.warlock.features["pact boon"], false, "Pact of the Ta
 	name : "Pact of the Talisman",
 	source : ["TCoE", 70],
 	description : desc([
-		"The wearer of this amulet adds 1d4 to failed ability checks, potentially turning a failed roll into a success; I can do this a number of times euqal to my proficiency bonus and all expended uses are regained on a long rest",
+		"The wearer of this amulet adds 1d4 to failed ability checks, potentially turning a failed roll into a success; I can do this a number of times equal to my proficiency bonus and all expended uses are regained on a long rest",
 		"I can give the talisman to others to use; The talisman turns to ash when I die",
-		"If I lose my talisman, I can preform an 1-hour ceremony to gain a replacement",
+		"If I lose my talisman, I can perform an 1-hour ceremony to gain a replacement",
 		"This ceremony destroys the previous amulet and can be done during a short or long rest"
 	]),
 	usages : "Proficiency Bonus per ",
@@ -1221,7 +1222,7 @@ AddFeatureChoice(ClassList.wizard.features.spellcasting, true, "Cantrip Formulas
 	name : "Cantrip Formulas",
 	source : ["TCoE", 76],
 	minlevel : 3,
-	description : "\n	I have sciped a set of arcane formulas in my spellbook that I can use to formulate a cantrip in my mind. Whenever I finish a long rest and consult those formulas in my spellbook, I can replace on wizard cantrip I know with another cantrip from the wizard spell list"
+	description : "\n	I have scripted a set of arcane formulas in my spellbook that I can use to formulate a cantrip in my mind. Whenever I finish a long rest and consult those formulas in my spellbook, I can replace on wizard cantrip I know with another cantrip from the wizard spell list"
 }, "Wizard Spellcasting Enhancement");
 AddFeatureChoice(ClassList.wizard.features.spellcasting, true, "Expanded Spell List", {
 	name : "Additional Wizard Spells",
@@ -1232,7 +1233,7 @@ AddFeatureChoice(ClassList.wizard.features.spellcasting, true, "Expanded Spell L
 			function(spList, spName, spType) {
 				// Stop this is not the class' spell list or if this is for a bonus spell entry
 				if (spName !== "wizard" || spType.indexOf("bonus") !== -1) return;
-				spList.extraspells = spList.extraspells.concat(["booming blade", "green-flame blade", "lightning lure", "mind sliver", "sword burst", "tasha's caustic brew", "augury", "enhance ability", "tasha's mind whip", "intellect fortress", "speak with dead", "spirit shroud", "summon fey", "summon shadow-spawn", "summon undead", "divination", "summon abberation", "summon construct", "summon elemental", "summon fiend", "tasha's otherworldy guise", "dream of the blue well", "blade of disaster"]);
+				spList.extraspells = spList.extraspells.concat(["booming blade", "green-flame blade", "lightning lure", "mind sliver", "sword burst", "tasha's caustic brew", "augury", "enhance ability", "tasha's mind whip", "intellect fortress", "speak with dead", "spirit shroud", "summon fey", "summon shadow-spawn", "summon undead", "divination", "summon aberration", "summon construct", "summon elemental", "summon fiend", "tasha's otherworldly guise", "dream of the blue well", "blade of disaster"]);
 			},
 			"This alternative class feature enhancement expands the spells list of the wizard class."
 		]
